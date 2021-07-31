@@ -3,6 +3,7 @@ console.log('Hello World');
 const elContainer = document.querySelector(".eascontainer");
 console.log(elContainer);
 
+//Creates 16 X 16 grid manually.
 function createGrid() {
     let myHTML = '';
     for(let i = 0;i < 256; i++){
@@ -13,30 +14,12 @@ function createGrid() {
 
 createGrid();
 
-//CHANGE THIS CLASSNAME
+//(CHANGE THIS CLASSNAME)
 const eascells = document.querySelectorAll(".eascell");
 
+//Adds event listener to add class, turning cell color to black
 eascells.forEach(cell => {
     cell.addEventListener('mouseover', () => {
         cell.classList.add("turnblack");
     });
 });
-
-// eascells.forEach((eascell) => {
-//     eascells.addEventListener("mouseover", function() {
-//         eascells.classList.add("turnblack");
-//     });
-// });
-
-
-// eascells.forEach((eascell) => {
-//     eascell.addEventListener('click',() => {
-//         console.log('turns black');
-//     });
-// });
-
-// eascell.classList.add('turnblack');
-
-// eascell.addEventListener('mouseenter', ()=>{
-//     eascell.classList.add('turn-black');
-// })
