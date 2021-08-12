@@ -1,6 +1,6 @@
 :root {
-    --eascanvas: 960px;
-    --eascell: 32;
+    --eascanvas: 500px;
+    --eascell: 16;
     --easdimension: calc(var(--eascanvas) / var(--eascell));
 }
 
@@ -10,11 +10,33 @@
     padding: 0;
 }
 
+body {
+    text-align: center;
+}
+
+header, footer {
+    padding: 1em;
+    margin: 1em;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    margin-bottom: 1em;
+}
+
 .eascontainer {
     display: grid;
     justify-content: center;
-    height: 500px;
-    width: 500px;
+    border-left: 1px solid black;
+    border-top: 1px solid black;
+    height: var(--eascanvas);
+    width: var(--eascanvas);
     grid-template-columns: repeat(var(--eascell), var(--easdimension));
 }
 
@@ -22,6 +44,8 @@
     width: var(--easdimension);
     height: var(--easdimension);
     border: black 1px solid;
+    border-left: 0;
+    border-top: 0;
 }
 
 .turnblack {
