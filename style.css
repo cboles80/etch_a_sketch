@@ -1,3 +1,9 @@
+:root {
+    --eascanvas: 960px;
+    --eascell: 32;
+    --easdimension: calc(var(--eascanvas) / var(--eascell));
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -7,18 +13,16 @@
 .eascontainer {
     display: grid;
     justify-content: center;
-    grid-template-columns: repeat(16, calc( 960px / 16 ));
+    height: 500px;
+    width: 500px;
+    grid-template-columns: repeat(var(--eascell), var(--easdimension));
 }
 
 .eascell {
-    width: calc( 960px / 16 );
-    height: calc( 960px / 16 );
+    width: var(--easdimension);
+    height: var(--easdimension);
     border: black 1px solid;
 }
-
-/* .eas-cell:hover {
-    background-color: black;
-} */
 
 .turnblack {
     background-color: black;

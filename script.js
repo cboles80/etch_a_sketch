@@ -1,4 +1,7 @@
 console.log('Hello World');
+var declaration = document.styleSheets[0].cssRules[0].style;
+// const numCells = parseInt(declaration.getPropertyValue(eascell))**2;
+// console.log(numCells);
 
 const elContainer = document.querySelector(".eascontainer");
 console.log(elContainer);
