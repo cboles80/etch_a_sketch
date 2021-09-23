@@ -11,13 +11,12 @@
         <h1>Chris Etch-a-Sketch</h1>
     </header>
     <main>
-        <form action="#">
-            <div>
-                <label for="count-columns">How many columns?</label>
-                <input id="count-columns" type="number" name="count-columns" min="16" max="100" value="16">
-                <input type="button" value="Submit" onclick="handleSubmit()">
-            </div>
-        </form>
+        <div class="control">
+            <label for="count-columns">How many columns & rows?</label>
+            <input id="count-columns" type="number" name="count-columns" min="16" max="100" value="16">
+            <button type="button" class="colrow">Submit</button>
+            <button type="button" class="clear">Clear</button>
+        </div>
         <div class="eascontainer">
             
         </div>

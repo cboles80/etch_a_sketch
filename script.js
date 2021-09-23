@@ -1,4 +1,4 @@
-console.log('Hello World');
+console.log('Hello World - v','1a');
 
 // Create a styles variable that holds the document styles.
 var styles = getComputedStyle(document.documentElement);
@@ -42,31 +42,36 @@ function handleMouseOver(e) {
 }
 
 function handleSubmit(e){
+    e.preventDefault();
     console.log('top handleSubmit');
     console.log('keyup-submit');
     console.log(e);
-    // e.preventDefault();
-    // if (e.key === 'Enter'){
-    //     countCols = parseInt(elCountColumns.value);
-    //     document.documentElement.style.setProperty('--eascell', countCols);
-    //     countCells = countCols**2;
-    //     console.log(countCells);
-    //     createGrid();
-    // }
+    console.log('----->',e.target.outerText);
+    if (elCountColumns.value > 100 || elCountColumns.value < 16) {
+        console.log('early return');
+        alert('Please enter a number between 16 and 100');
+        return; // ********** EARLY RETURN
+    }
+    if (e.key === 'Enter' || e.target.outerText === 'Submit'){
+        console.log(e.target.type);
+        countCols = parseInt(elCountColumns.value);
+        document.documentElement.style.setProperty('--eascell', countCols);
+        countCells = countCols**2;
+        console.log(countCells);
+        createGrid();
+        console.log('after create grid');
+        return;
+    }
 }
+
+function addEventListeners() {
+    console.log('top of addEventListeners');
+    
+    elCountColumns.addEventListener('keyup', handleSubmit);
+    document.querySelector('button').addEventListener('click', handleSubmit);
+}
+
 createGrid();
-
-elCountColumns.addEventListener('change', () => {
-    console.log('Changed');
-    countCols = parseInt(elCountColumns.value);
-    console.log(typeof countCols);
-    document.documentElement.style.setProperty('--eascell', countCols);
-    countCells = countCols**2;
-    console.log(countCells);
-    createGrid();
-})
-
-// elCountColumns.addEventListener('keyup', handleSubmit);
-elCountColumns.addEventListener('submit', handleSubmit);
+addEventListeners();
 
 console.log('bottom of file');

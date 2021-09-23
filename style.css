@@ -26,8 +26,8 @@ main {
     align-items: center;
 }
 
-form {
-    margin-bottom: 1em;
+.control {
+    padding: 1em;
 }
 
 .eascontainer {
