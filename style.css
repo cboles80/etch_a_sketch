@@ -12,6 +12,11 @@
 
 body {
     text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    font-family: 'Roboto', sans-serif;
 }
 
 header, footer {
@@ -27,7 +32,18 @@ main {
 }
 
 .control {
-    padding: 1em;
+    margin: 1em;
+}
+
+.clear {
+    margin: 1em 1em 0 1em;
+}
+
+button {
+    padding: 0.35em;
+    margin-top: 0.5em;
+    background-color: aquamarine;
+    border-radius: 5px;
 }
 
 .eascontainer {
